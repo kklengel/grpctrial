@@ -1,9 +1,21 @@
-package grpctrial
+package main
+
+import (
+	"fmt"
+	"github.com/golang/protobuf/proto"
+)
 
 func main() {
-
+	Do()
 }
 
-func Bla(s string) error {
+func Do() error {
+
+	chatMessage := &ChatMessage{
+		Text: "hallo welt",
+		Done: true,
+	}
+
+	fmt.Println(proto.MarshalTextString(chatMessage))
 	return nil
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package main;
+
+message ChatMessage {
+    string text = 1;
+    bool done = 2;
+}
+service ChatService {
+    rpc EchoChatMessage(ChatMessage) returns (ChatMessage) {}
+}
